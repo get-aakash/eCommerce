@@ -19,19 +19,15 @@ from django.urls import path
 from django.urls.conf import include
 from django.conf import settings
 from django.conf.urls.static import static
-from shop import views as views1
-from product import views as views2
-from checkout import views as views3
-from contact import views as views4
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("eCommerceApp.urls")),
-    path("shop", views1.shop, name="shop"),
-    path("product", views2.product, name="product"),
-    path("checkout", views3.checkout, name="checkout"),
-    path("contact", views4.contact, name="contact"),
+    path("", include("shop.urls")),
+    path("", include("product.urls")),
+    path("", include("checkout.urls")),
+    path("", include("contact.urls")),
 ]
 
 if settings.DEBUG:
