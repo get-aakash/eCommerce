@@ -7,5 +7,7 @@ from .models import Product
 
 def index(request):
     data = Product.objects.all()
+    value = data[:3]
+    print(value)
 
-    return render(request, "index.html", {"datas": data})
+    return render(request, "index.html", {"datas": value})

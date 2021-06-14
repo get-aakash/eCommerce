@@ -35,14 +35,15 @@
 				</span>
 			</div>
 		</div>
+		{% for data in datas%}
 		<div class="row">
 			<div class="col-md-4">
 				<div class="productbox">
 					<div class="fadeshop">
 						<div class="captionshop text-center" style="display: none;">
-							<h3>Item Name</h3>
+							<h3>{{data.productName}}</h3>
 							<p>
-								This is a short excerpt to generally describe what the item is about.
+								{{data.productDescription}}
 							</p>
 							<p>
 								<a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i>
@@ -50,157 +51,25 @@
 								<a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Details</a>
 							</p>
 						</div>
-						<span class="maxproduct"><img src="{%static  'images/product1-1.jpg'%}" alt=""></span>
+						<span class="maxproduct"><img src="{{data.img.url}}" alt=""></span>
 					</div>
 					<div class="product-details">
 						<a href="#">
-							<h1>Calypso Theme</h1>
+							<h1>{{data.productName}}</h1>
 						</a>
 						<span class="price">
-							<span class="edd_price">$49.00</span>
+							<span class="edd_price">{{data.productPrice}}</span>
 						</span>
 					</div>
 				</div>
 			</div>
 			<!-- /.productbox -->
-			<div class="col-md-4">
-				<div class="productbox">
-					<div class="fadeshop">
-						<div class="captionshop text-center" style="display: none;">
-							<h3>Item Name</h3>
-							<p>
-								This is a short excerpt to generally describe what the item is about.
-							</p>
-							<p>
-								<a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i>
-									Purchase</a>
-								<a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Details</a>
-							</p>
-						</div>
-						<span class="maxproduct"><img src="{%static  'images/product2.jpg'%}" alt=""></span>
-					</div>
-					<div class="product-details">
-						<a href="#">
-							<h1>FastSell Theme</h1>
-						</a>
-						<span class="price">
-							<span class="edd_price">$49.00</span>
-						</span>
-					</div>
-				</div>
-			</div>
 			<!-- /.productbox -->
-			<div class="col-md-4">
-				<div class="productbox">
-					<div class="fadeshop">
-						<div class="captionshop text-center" style="display: none;">
-							<h3>Item Name</h3>
-							<p>
-								This is a short excerpt to generally describe what the item is about.
-							</p>
-							<p>
-								<a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i>
-									Purchase</a>
-								<a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Details</a>
-							</p>
-						</div>
-						<span class="maxproduct"><img src="{%static  'images/product2-3.jpg'%}" alt=""></span>
-					</div>
-					<div class="product-details">
-						<a href="#">
-							<h1>Biscaya Theme</h1>
-						</a>
-						<span class="price">
-							<span class="edd_price">$49.00</span>
-						</span>
-					</div>
-				</div>
-			</div>
+			{% endfor %}
 			<!-- /.productbox -->
 		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<div class="productbox">
-					<div class="fadeshop">
-						<div class="captionshop text-center" style="display: none;">
-							<h3>Item Name</h3>
-							<p>
-								This is a short excerpt to generally describe what the item is about.
-							</p>
-							<p>
-								<a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i>
-									Purchase</a>
-								<a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Details</a>
-							</p>
-						</div>
-						<span class="maxproduct"><img src="{%static  'images/product1.jpg'%}" alt=""></span>
-					</div>
-					<div class="product-details">
-						<a href="#">
-							<h1>Expertum Theme</h1>
-						</a>
-						<span class="price">
-							<span class="edd_price">$35.00</span>
-						</span>
-					</div>
-				</div>
-			</div>
-			<!-- /.productbox -->
-			<div class="col-md-4">
-				<div class="productbox">
-					<div class="fadeshop">
-						<div class="captionshop text-center" style="display: none;">
-							<h3>Item Name</h3>
-							<p>
-								This is a short excerpt to generally describe what the item is about.
-							</p>
-							<p>
-								<a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i>
-									Purchase</a>
-								<a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Details</a>
-							</p>
-						</div>
-						<span class="maxproduct"><img src="{%static  'images/product2-2.jpg'%}" alt=""></span>
-					</div>
-					<div class="product-details">
-						<a href="#">
-							<h1>Serenity Theme</h1>
-						</a>
-						<span class="price">
-							<span class="edd_price">$49.00</span>
-						</span>
-					</div>
-				</div>
-			</div>
-			<!-- /.productbox -->
-			<div class="col-md-4">
-				<div class="productbox">
-					<div class="fadeshop">
-						<div class="captionshop text-center" style="display: none;">
-							<h3>Item Name</h3>
-							<p>
-								This is a short excerpt to generally describe what the item is about.
-							</p>
-							<p>
-								<a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i>
-									Purchase</a>
-								<a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Details</a>
-							</p>
-						</div>
-						<span class="maxproduct"><img src="{%static  'images/product3.png'%}" alt=""></span>
-					</div>
-					<div class="product-details">
-						<a href="#">
-							<h1>Hypnosa Theme</h1>
-						</a>
-						<span class="price">
-							<span class="edd_price">$35.00</span>
-						</span>
-					</div>
-				</div>
-			</div>
-			<!-- /.productbox -->
-		</div>
+
+
 	</div>
 	</div>
 </section>
