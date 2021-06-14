@@ -6,3 +6,4 @@ class Product(models.Model):
     productName = models.CharField(max_length=255)
     productDescription = models.TextField()
     img = models.ImageField(upload_to="pics")
+    awaesome = models.BooleanField(default=False)

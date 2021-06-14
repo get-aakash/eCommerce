@@ -17,6 +17,10 @@
 </div>
 </div>
 </header>
+
+
+
+
 <!-- CONTENT =============================-->
 <section class="item content">
 	<div class="container toparea">
@@ -24,6 +28,7 @@
 			<div class="editContent">
 				<h1 class="text-center latestitems">Get in Touch</h1>
 			</div>
+
 			<div class="wow-hr type_short">
 				<span class="wow-hr-h">
 					<i class="fa fa-star"></i>
@@ -31,6 +36,7 @@
 					<i class="fa fa-star"></i>
 				</span>
 			</div>
+
 		</div>
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2">
@@ -40,14 +46,28 @@
 						Your message has been sent. Thank you!
 					</div>
 				</div>
-				<form method="post" action="contact.php" id="contactform">
+				<form method="post" action="submit_contact" id="contactform">
+					{% csrf_token %}
 					<div class="form">
 						<input type="text" name="name" placeholder="Your Name *">
 						<input type="text" name="email" placeholder="Your E-mail Address *">
 						<textarea name="comment" rows="7" placeholder="Type your Message *"></textarea>
 						<input type="submit" id="submit" class="clearfix btn" value="Send">
 					</div>
+
 				</form>
+				<div>
+
+					{% for message in messages %}
+					<div class="alert {{ message.tags }} alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						{{ message }}
+					</div>
+					{% endfor %}
+				</div>
+
 			</div>
 		</div>
 	</div>

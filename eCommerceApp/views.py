@@ -6,8 +6,6 @@ from .models import Product
 
 
 def index(request):
-    data = Product.objects.all()
-    value = data[:3]
-    print(value)
+    data = Product.objects.all()[:3]
 
-    return render(request, "index.html", {"datas": value})
+    return render(request, "index.html", {"datas": data})
