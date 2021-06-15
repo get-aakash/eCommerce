@@ -1,6 +1,6 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
-from .models import Product
+from .models import Product, UserReview
 
 # Create your views here.
 
@@ -8,4 +8,6 @@ from .models import Product
 def index(request):
     data = Product.objects.all()[:3]
 
-    return render(request, "index.html", {"datas": data})
+    value = UserReview.objects.all()[:2]
+
+    return render(request, "index.html", {"datas": data, "values": value})

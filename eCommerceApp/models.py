@@ -7,3 +7,8 @@ class Product(models.Model):
     productDescription = models.TextField()
     img = models.ImageField(upload_to="pics")
     awaesome = models.BooleanField(default=False)
+
+
+class UserReview(models.Model):
+    productReview = models.TextField()
+    img = models.ImageField(upload_to="reviewPics")

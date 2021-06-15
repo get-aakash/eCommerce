@@ -13,22 +13,23 @@ def sample(request):
 
 
 def submit_contact(request):
+    client = Client()
+    if request.method == "POST":
+        client.clientName = request.POST["name"]
+        client.clientEmail = request.POST["email"]
+        client.clientMessage = request.POST["comment"]
 
-    name = request.POST["name"]
-    email = request.POST["email"]
-    message = request.POST["comment"]
-
-    if name == "":
+    if client.clientName == "":
         messages.info(request, "the name field is empty")
         return render(request, "contact.html")
-    if email == "":
+    if client.clientEmail == "":
         messages.info(request, "the email field is empty")
         return render(request, "contact.html")
-    if message == "":
+    if client.clientMessage == "":
         messages.info(request, "the message field is empty")
         return render(request, "contact.html")
     print("this is the submit contact form")
-    client_info = Client(clientName=name, clientEmail=email, clientMessage=message)
-    client_info.save()
+
+    client.save()
     messages.info(request, "the response has been recorded")
     return render(request, "contact.html")
