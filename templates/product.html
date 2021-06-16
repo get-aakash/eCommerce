@@ -49,7 +49,7 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<a href="#" class="btn btn-buynow">{{data.productPrice}} - Purchase</a>
+				<a href="{% url 'purchase' data.id %}" class="btn btn-buynow">{{data.productPrice}} - Purchase</a>
 
 			</div>
 		</div>

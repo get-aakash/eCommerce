@@ -59,8 +59,7 @@
 							<tr class="edd_cart_item" id="edd_cart_item_0_25" data-download-id="25">
 								<td class="edd_cart_item_name">
 									<div class="edd_cart_item_image">
-										<img width="25" height="25" src="{%static  'images/scorilo2-70x70.jpg'%}"
-											alt="">
+										<img width="25" height="25" src="{{datas.img.url}}" alt="">
 									</div>
 									<span class="edd_checkout_cart_item_title"
 										name="productName">{{datas.productName}}</span>
@@ -95,8 +94,17 @@
 				</div>
 			</form>
 			<div id="edd_checkout_form_wrap" class="edd_clearfix">
-				<form id="edd_purchase_form" class="edd_form" action="submit_purchase" method="POST">
+				<form id="edd_purchase_form" class="edd_form" action="" method="POST">
+
 					{% csrf_token %}
+					{% for message in messages %}
+					<div class="alert {{ message.tags }} alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						{{ message }}
+					</div>
+					{% endfor %}
 					<fieldset id="edd_checkout_user_info">
 						<legend>Personal Info</legend>
 						<p id="edd-email-wrap">
