@@ -46,6 +46,12 @@
 						Your message has been sent. Thank you!
 					</div>
 				</div>
+				{% for message in messages %}
+				<div class="alert {{ message.tags }} alert-danger" role="alert">
+					<a href="#" class="alert-link"></a>
+					{{ message }}
+				</div>
+				{% endfor %}
 				<form method="post" action="submit_contact" id="contactform">
 
 					{% csrf_token %}
@@ -59,14 +65,7 @@
 				</form>
 				<div>
 
-					{% for message in messages %}
-					<div class="alert {{ message.tags }} alert-dismissible" role="alert">
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						{{ message }}
-					</div>
-					{% endfor %}
+
 				</div>
 
 			</div>

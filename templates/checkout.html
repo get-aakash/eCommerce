@@ -37,7 +37,7 @@
 			</div>
 		</div>
 		<div id="edd_checkout_wrap" class="col-md-8 col-md-offset-2">
-			<form id="edd_checkout_cart_form" action="submit_purchase" method="post">
+			<form id="edd_checkout_cart_form" action="" method="post">
 				{% csrf_token %}
 				<div id="edd_checkout_cart_wrap">
 
@@ -93,15 +93,14 @@
 					</table>
 				</div>
 			</form>
+
 			<div id="edd_checkout_form_wrap" class="edd_clearfix">
 				<form id="edd_purchase_form" class="edd_form" action="" method="POST">
 
 					{% csrf_token %}
 					{% for message in messages %}
-					<div class="alert {{ message.tags }} alert-dismissible" role="alert">
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
+					<div class="alert {{ message.tags }} alert-danger" role="alert">
+						<a href="#" class="alert-link"></a>
 						{{ message }}
 					</div>
 					{% endfor %}

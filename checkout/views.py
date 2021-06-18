@@ -14,6 +14,7 @@ def checkout(request):
 def purchase(request, id):
     print(id)
     purchase = Purchase()
+    product = Product()
     data = Product.objects.get(pk=id)
 
     if request.method == "POST":
@@ -21,16 +22,16 @@ def purchase(request, id):
         purchase.clientFirstName = request.POST["firstName"]
         purchase.clientLastName = request.POST["lastName"]
         purchase.clientEmail = request.POST["email"]
-        purchase.purchasedItemName = data.productName
-        purchase.purchasedItemPrice = data.productPrice
+        purchase.product_id = data.id
+
         if purchase.clientLastName == "":
             messages.info(request, "the lastName field is empty")
-            return render(request, "checkout.html")
+            return render(request, "checkout.html", {"datas": data})
         if purchase.clientEmail == "":
             messages.info(request, "the email field is empty")
-            return render(request, "checkout.html")
+            return render(request, "checkout.html", {"datas": data})
         purchase.save()
         messages.info(request, "the purchase is successful")
-        return render(request, "checkout.html")
+        return render(request, "checkout.html", {"datas": data})
 
     return render(request, "checkout.html", {"datas": data})
